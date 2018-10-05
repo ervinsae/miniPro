@@ -1,0 +1,30 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/me/me",
+    "pages/logs/logs",
+    "pages/todo/todo",
+    "pages/details/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ERVIN",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "selectedColor": "#5a7193",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "Home",
+      "iconPath": "images/ic_home_n.png",
+      "selectedIconPath": "images/ic_home_s.png"
+    },
+    {
+      "pagePath": "pages/me/me",
+      "text": "Me",
+      "iconPath": "images/ic_me_n.png",
+      "selectedIconPath": "images/ic_me_s.png"
+    }]
+  }
+}

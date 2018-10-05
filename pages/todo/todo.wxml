@@ -1,0 +1,10 @@
+<!--pages/todo/todo.wxml-->
+<view class="root">
+  <view class="header">
+    <input class="inputView" value="{{str}}" placeholder="input a todo things" auto-focus type="text" bindconfirm="inputHandler" />
+  </view>
+  <view class="itemlist" wx:for="{{itemList}}" wx:key= "id" >
+    <text class="item" data-id="{{item.id}}" bindtap="onItemClick" style="text-decoration-line : {{style}}">{{item.title}}</text>
+  </view>
+
+</view>

@@ -1,0 +1,58 @@
+Page {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.root{
+  display: flex;
+  flex-direction: column;
+}
+
+.movie{
+  display: flex;
+  flex-direction: row;
+  width: 750rpx;
+  padding: 10px
+  
+}
+
+
+.image{
+  height: 190px;
+  width: 150px;
+  justify-content: center;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+}
+
+.title{
+  color: white;
+  font-size: 18px;
+  margin-left: 10px; 
+}
+
+.description{
+  display: -webkit-box;
+  -webkit-line-clamp:6;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  color: #BBBBBB;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.des{
+  display: flex;
+  flex-direction: row;
+  justify-content: center
+}
