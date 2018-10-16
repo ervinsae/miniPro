@@ -4,12 +4,12 @@
 
   <view class="content">
   <text class="title">{{title}}</text>
-  <text class="category" style="font-size:13px;color:white;margin-left:10px;margin-top:8px">剧情 | 伦理 | 情感</text>
-  <text class="detail" style='font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:8px'>2018年 | 中国 | {{duration}}分钟</text>
-  <text class="other_name" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:8px">其它译名：{{alisname}}</text>
-  <text class="director" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:8px">导演：{{director}}</text>
+  <text class="category" style="font-size:13px;color:white;margin-left:10px;margin-top:6px">剧情 | 伦理 | 情感</text>
+  <text class="detail" style='font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:6px'>2018年 | 中国 | {{duration}}分钟</text>
+  <text class="other_name" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:6px">其它译名：{{alisname}}</text>
+  <text class="director" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:6px">导演：{{director}}</text>
   <text class="protagonist" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-right:10px;margin-top:8px">主演：{{actor}}</text>
-  <text class="time" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:8px">上映时间：{{time}}</text>
+  <text class="time" style="font-size:12px;color:#BBBBBB;margin-left:10px;margin-top:6px">上映时间：{{time}}</text>
   
   </view>
 
