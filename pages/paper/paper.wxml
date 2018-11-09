@@ -1,0 +1,2 @@
+<!--pages/paper/paper.wxml-->
+<web-view src="{{html}}"></web-view>

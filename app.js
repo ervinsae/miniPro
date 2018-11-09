@@ -34,6 +34,11 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    //主题颜色
+    mainColor: "#1B82D1",
+    //服务器地址
+    //baseUrl: "http://sysutl.com/",
+    baseUrl: "http://118.24.46.168/",
   }
 })

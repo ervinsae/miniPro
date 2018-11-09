@@ -1,34 +1,41 @@
-Page({
+//获取应用实例
+const app = getApp()
+var that = this
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    id:0,
-    title:"",
-    des:"",
-    url:"",
-    duration:"",
-    alisname:"",
-    director:"",
-    actor:"",
-    time:""
+    id: 0,
+    title: "",
+    des: "",
+    imageurl: "",
+    duration: "",
+    alisname: "", 
+    director: "",
+    actor: "",
+    time: "",
+    assets:[],
+
+    host: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     console.log(options)
     wx.showToast({
       title: '加载中..',
-      duration: 1000
+      icon: 'loading',
+      duration: 5000
     })
 
     this.setData({
       /*name : options.name,
       url : options.url*/
-      id : options.id
+      id: options.id,
     })
 
     this.onQueryData(this.data.id)
@@ -38,57 +45,72 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function() {
+    //const TxvContext = requirePlugin("tencentVideo");
+
+    //let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
+
+
+    //txvContext.play();  // 播放
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    
+  onPullDownRefresh: function() {
+    console.log("pull down page");
+    //onQueryData('20108102208')
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function() {
+
   },
 
-  onQueryData:function(id){
+  /**
+   * 
+   */
+  gotovideo: function() {
+    wx.navigateTo({
+      url: '../paper/paper'
+    })
+  },
+
+  onQueryData: function(id) {
     var that = this;
 
     wx.request({
-      url: 'http://118.24.46.168/Home/Index/movie?id='+id,
+      url: app.globalData.baseUrl + 'movie/' + id,
 
       method: 'GET',
 
@@ -96,20 +118,39 @@ Page({
         'content-type': 'application/json'
       },
 
-      success: function(res){
+      success: function(res) {
         console.log(res.data);
+        wx.hideToast();
+        // // 隐藏导航栏加载框
+        // wx.hideNavigationBarLoading();
+        // // 停止下拉动作
+        // wx.stopPullDownRefresh();
         var data = res.data.retdata;
         that.setData({
+          host:app.globalData.baseUrl,
+
           title: data.name,
-          url:"http://00.imgmini.eastday.com/mobile/20161028/20161028202106_9f5968897abf2882af89f1193529bdfb_1_mwpm_03200403.jpeg",
-          des:data.introduction,
-          duration:data.duration,
-          alisname:data.other_name,
+          //imageurl: app.globalData.baseUrl + data.movie_image,
+          //不能使用IP地址
+          imageurl: "../../images/bg.jpg",
+
+          des: data.introduction,
+          duration: data.duration,
+          country: data.country,
+          alisname: data.other_name,
           actor: data.protagonist,
           director: data.director,
-          time:data.show_date
-        });
+          time: data.show_date,
 
+          assets: data.asset
+        });
+      },
+
+      fail: function(res) {
+        console.log(res.data);
+        wx.showToast({
+          title: '网络异常，请重试！',
+        })
       }
     })
   }

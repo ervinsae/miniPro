@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wx9540a3f4853e40cf",
+	"appid": "wx87f0d346e0262b3e",
 	"projectname": "WechatProgram",
 	"isGameTourist": false,
 	"condition": {
@@ -48,10 +48,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 2,
 					"name": "detail",
 					"pathName": "pages/details/detail",
-					"query": "id=232323"
+					"query": "id=20108102208"
 				}
 			]
 		}

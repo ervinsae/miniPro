@@ -99,7 +99,7 @@ Page({
 
     wx.navigateTo({
       //url: '../details/detail?name=' + data.bean.title + '&url=' + data.bean.thumbnail_pic_s,
-      url: '../details/detail?id='+ 232323,
+      url: '../details/detail?id=' + 20108102208,
     })
   }
 })
