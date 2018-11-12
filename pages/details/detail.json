@@ -2,6 +2,5 @@
   "usingComponents": {
     "txv-video": "plugin://tencentVideo/video"
   },
-  "enablePullDownRefresh": true,
-  "navigationBarTitleText": "西红柿"
+  "enablePullDownRefresh": true
 }

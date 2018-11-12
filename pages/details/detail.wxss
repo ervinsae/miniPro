@@ -21,7 +21,7 @@ Page {
 
 .image {
   height: 340rpx;
-  width: 340rpx;
+  width: 320rpx;
   justify-content: center;
 }
 
@@ -74,8 +74,12 @@ text {
 
 .assetstyle{
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  flex-direction: column;
+  background-color: #000;
+  padding: 10px;
+  font-size: 14px;
+  /* border-bottom: 1rpx solid #f5f5f5; */
+
 }
 
 .protagonist{
@@ -87,6 +91,6 @@ text {
 .watch{
   display: flex;
   flex-direction: row;
-  margin-left: 35rpx;
+  margin-left: 40rpx;
   margin-top: 40rpx
 }

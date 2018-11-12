@@ -12,11 +12,11 @@ Page({
     des: "",
     imageurl: "",
     duration: "",
-    alisname: "", 
+    alisname: "",
     director: "",
     actor: "",
     time: "",
-    assets:[],
+    assets: [],
 
     host: ""
   },
@@ -100,9 +100,10 @@ Page({
   /**
    * 
    */
-  gotovideo: function() {
+  gotovideo: function(event) {
+    console.log(event)
     wx.navigateTo({
-      url: '../paper/paper'
+      url: '../paper/paper?url=' + event.currentTarget.dataset.url
     })
   },
 
@@ -127,12 +128,12 @@ Page({
         // wx.stopPullDownRefresh();
         var data = res.data.retdata;
         that.setData({
-          host:app.globalData.baseUrl,
+          host: app.globalData.baseUrl,
 
           title: data.name,
-          //imageurl: app.globalData.baseUrl + data.movie_image,
+          imageurl: app.globalData.baseUrl + data.movie_image,
           //不能使用IP地址
-          imageurl: "../../images/bg.jpg",
+          //imageurl: "../../images/bg.jpg",
 
           des: data.introduction,
           duration: data.duration,
@@ -144,6 +145,10 @@ Page({
 
           assets: data.asset
         });
+
+        wx.setNavigationBarTitle({
+          title: data.name,
+        })
       },
 
       fail: function(res) {

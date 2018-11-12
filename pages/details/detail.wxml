@@ -25,7 +25,7 @@
 
   <view class="des">
     <view class='backgroud'>
-      <text class="description" bindtap='gotovideo'>{{des}}</text>
+      <text class="description">{{des}}</text>
     </view>
   </view>
 
@@ -34,9 +34,9 @@
     <text style="font-size: 18px;color:#fff;font-style='bold'">抢先看</text>
   </view>
   <block wx:for="{{assets}}" wx:for-item="item" wx:key="index">
-    <view class="assetstyle" data-url="{{host}}{{item.asset_url}}">
+    <view class="assetstyle" data-url="{{host}}{{item.asset_url}}" bindtap='gotovideo'>
 
-      <image src="{{host}}{{item.asset_image}}"></image>
+      <!-- <image src="{{host}}{{item.asset_image}}"></image> -->
       <text>{{item.asset_description}}</text>
 
     </view>

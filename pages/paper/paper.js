@@ -1,70 +1,91 @@
 // pages/paper/paper.js
+var App = getApp();
+var WxParse = require('../../wxParse/wxParse.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     html:""
+    html: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
+    console.log(options)
     this.setData({
-      html: "http://118.24.46.168/content/Hello_Mr_Billionaire_3.html"
+      html: options.url,
     })
-      
-    
+
+    var that = this;
+
+    wx.request({
+      url: options.url,
+      //url: 'http://sysutl.com/content/Hello_Mr_Billionaire_3.html',
+      //url: 'https://blog.csdn.net/liuyan19891230/article/details/50969393',
+      method: 'POST',
+      header: {
+        'content-type': 'text/html'
+      },
+
+      success: function(res) {
+        console.log(res.data)
+        var article = res.data;
+        WxParse.wxParse('article', 'html', article, that)
+      }
+    })
+    //W
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
