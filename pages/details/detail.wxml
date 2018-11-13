@@ -1,16 +1,16 @@
 <view class="root">
   <view class="movie">
-    <image class="image" src="{{imageurl}}" mode="scaleFill"></image>
+    <image class="image_top" src="{{imageurl}}" mode="scaleFill"></image>
 
     <view class="content">
       <text class="title">{{title}}</text>
-      <text class="category" style="font-size:13px;color:white">剧情 | 伦理 | 情感</text>
-      <text class="detail">2018年 | {{country}} | {{duration}}</text>
+      <text class="category" style="font-size:13px;color:white">{{movie_type}}</text>
+      <text class="detail">{{year}} | {{country}} | {{duration}}</text>
       <text class="other_name">其它译名：{{alisname}}</text>
       <text class="director">导演：{{director}}</text>
       <view class="protagonist">
-        <text style="white-space:nowrap">主演:</text>
-        <text>{{actor}}</text>
+        <text style="white-space:nowrap">主演：</text>
+        <text style="margin-left:0">{{actor}}</text>
       </view>
 
       <text class="time">上映时间：{{time}}</text>
@@ -19,8 +19,8 @@
 
   </view>
 
-  <!-- <txv-video vid="h00206qxr6a" playerid="txv1" poster='' autoplay="{{false}}" wx:if="{{true}}">
-  </txv-video> -->
+  <txv-video vid="h00206qxr6a" playerid="txv1" poster='' autoplay="{{false}}" wx:if="{{true}}">
+  </txv-video>
 
 
   <view class="des">
@@ -36,8 +36,12 @@
   <block wx:for="{{assets}}" wx:for-item="item" wx:key="index">
     <view class="assetstyle" data-url="{{host}}{{item.asset_url}}" bindtap='gotovideo'>
 
-      <!-- <image src="{{host}}{{item.asset_image}}"></image> -->
-      <text>{{item.asset_description}}</text>
+      <image style="width:100%;height:350rpx" src="{{host}}{{item.asset_image}}" mode="aspectFill"></image>
+      <!-- <image style="width:100%;height:320rpx" src='../../images/1.jpeg' mode="scaleFill"></image>
+   -->
+      <view class='text_content'>
+      <text style='color:white;font-size:14px'>{{item.asset_description}}</text>
+      </view>
 
     </view>
 

@@ -25,7 +25,7 @@ Page({
       url: options.url,
       //url: 'http://sysutl.com/content/Hello_Mr_Billionaire_3.html',
       //url: 'https://blog.csdn.net/liuyan19891230/article/details/50969393',
-      method: 'POST',
+      method: 'GET',
       header: {
         'content-type': 'text/html'
       },

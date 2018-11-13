@@ -17,7 +17,8 @@ Page({
   },
   toToDo : function(){
     wx.navigateTo({
-      url:'../todo/todo'
+      // 首次怎么配置id
+      url: '../details/detail?id=' + 20108102208
     })
   },
   onLoad: function () {
@@ -37,7 +38,7 @@ Page({
       }
     } else {
       // 在没有 open-type=getUserInfo 版本的兼容处理
-      /*wx.getUserInfo({
+      wx.getUserInfo({
         success: res => {
           app.globalData.userInfo = res.userInfo
           this.setData({
@@ -45,7 +46,7 @@ Page({
             hasUserInfo: true
           })
         }
-      })*/
+      })
     }
   },
   getUserInfo: function(e) {

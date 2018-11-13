@@ -1,38 +1,20 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/me/me",
-    "pages/logs/logs",
-    "pages/todo/todo",
     "pages/details/detail",
     "pages/paper/paper"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "ERVIN",
+    "navigationBarTitleText": "暴走小程序",
     "navigationBarTextStyle": "white"
   },
-  "tabBar": {
-    "selectedColor": "#5a7193",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "Home",
-        "iconPath": "images/ic_home_n.png",
-        "selectedIconPath": "images/ic_home_s.png"
-      },
-      {
-        "pagePath": "pages/me/me",
-        "text": "Me",
-        "iconPath": "images/ic_me_n.png",
-        "selectedIconPath": "images/ic_me_s.png"
-      }
-    ]
-  },
+
   "plugins": {
     "tencentVideo": {
-      "version": "1.0.0",
+      "version": "1.1.1",
       "provider": "wxa75efa648b60994b"
     }
   }

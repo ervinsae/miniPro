@@ -1,6 +1,5 @@
 //获取应用实例
 const app = getApp()
-var that = this
 
 Page({
   /**
@@ -9,7 +8,9 @@ Page({
   data: {
     id: 0,
     title: "",
+    movie_type: "",
     des: "",
+    year: "",
     imageurl: "",
     duration: "",
     alisname: "",
@@ -53,12 +54,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    //const TxvContext = requirePlugin("tencentVideo");
+    const TxvContext = requirePlugin("tencentVideo");
 
-    //let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
+    let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
 
 
-    //txvContext.play();  // 播放
+    txvContext.play();  // 播放
   },
 
   /**
@@ -79,8 +80,12 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
+
+    var that = this;
+    wx.showNavigationBarLoading()
     console.log("pull down page");
-    //onQueryData('20108102208')
+    that.onQueryData('20108102208')
+
   },
 
   /**
@@ -123,9 +128,9 @@ Page({
         console.log(res.data);
         wx.hideToast();
         // // 隐藏导航栏加载框
-        // wx.hideNavigationBarLoading();
+        wx.hideNavigationBarLoading();
         // // 停止下拉动作
-        // wx.stopPullDownRefresh();
+        wx.stopPullDownRefresh();
         var data = res.data.retdata;
         that.setData({
           host: app.globalData.baseUrl,
@@ -135,6 +140,7 @@ Page({
           //不能使用IP地址
           //imageurl: "../../images/bg.jpg",
 
+          movie_type: data.movie_type,
           des: data.introduction,
           duration: data.duration,
           country: data.country,
@@ -142,6 +148,7 @@ Page({
           actor: data.protagonist,
           director: data.director,
           time: data.show_date,
+          year: data.show_date.split("/")[0],
 
           assets: data.asset
         });
@@ -153,6 +160,10 @@ Page({
 
       fail: function(res) {
         console.log(res.data);
+        // // 隐藏导航栏加载框
+        wx.hideNavigationBarLoading();
+        // // 停止下拉动作
+        wx.stopPullDownRefresh();
         wx.showToast({
           title: '网络异常，请重试！',
         })
