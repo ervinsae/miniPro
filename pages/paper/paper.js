@@ -27,7 +27,7 @@ Page({
       //url: 'https://blog.csdn.net/liuyan19891230/article/details/50969393',
       method: 'GET',
       header: {
-        'content-type': 'text/html'
+        'content-type': 'application/x-www-form-urlencoded'
       },
 
       success: function(res) {
@@ -36,7 +36,6 @@ Page({
         WxParse.wxParse('article', 'html', article, that)
       }
     })
-    //W
 
   },
 
