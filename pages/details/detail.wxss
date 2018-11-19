@@ -104,5 +104,10 @@ text {
   text-align: left;
   background: #000;
   color: #fff;
-  opacity: 0.5;
+  opacity: 0.5;/*透明度*/
+}
+
+.video {
+  display: flex;
+  flex-direction: column
 }

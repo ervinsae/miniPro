@@ -19,7 +19,7 @@
 
   </view>
 
-  <txv-video vid="h00206qxr6a" playerid="txv1" poster='' autoplay="{{false}}" wx:if="{{true}}">
+  <txv-video vid="h00206qxr6a" playerid="txv1" poster='' autoplay="{{false}}" wx:if="{{false}}">
   </txv-video>
 
 
@@ -36,10 +36,15 @@
   <block wx:for="{{assets}}" wx:for-item="item" wx:key="index">
     <view class="assetstyle">
 
-      <image style="width:100%;height:340rpx" src="{{host}}{{item.asset_image}}" mode="aspectFill" bindtap='gotovideo' wx:if="{{item.asset_type == 3 ? true : false}}" data-url="{{host}}{{item.asset_url}}"></image>
+      <image style="width:100%;height:340rpx" src="{{host}}{{item.asset_image}}" mode="aspectFill" bindtap='gotovideo' wx:if="{{item.asset_type == 0 ? true : false}}" data-url="{{host}}{{item.asset_url}}"></image>
       <!-- <image style=" width:100%;height:320rpx " src='../../images/1.jpeg' mode="scaleFill "></image>-->
-      <txv-video vid="d0779q65t10" playerid="txv2" poster='' autoplay="{{false}}" wx:if="{{item.asset_type == 0 ? true : false}}">
-      </txv-video>
+      
+      <view class='video' wx:if="{{item.asset_type == 1 ? true : false}}">
+        <txv-video vid="{{item.vid}}" playerid="txv2" poster='' autoplay="{{false}}">
+        </txv-video>
+        <text style='color:white;font-size:14px'>{{item.asset_description}}</text>
+      </view>
+
 
       <view class='text_content'>
         <text style='color:white;font-size:14px'>{{item.asset_description}}</text>

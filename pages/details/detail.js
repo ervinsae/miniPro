@@ -59,7 +59,7 @@ Page({
     let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
 
 
-    txvContext.play();  // 播放
+    //txvContext.play();  // 播放
   },
 
   /**
