@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/details/detail",
     "pages/paper/paper"
    
@@ -8,7 +7,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "暴走小程序",
+    "navigationBarTitleText": "西虹市首富",
     "navigationBarTextStyle": "white"
   },
 

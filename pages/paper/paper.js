@@ -21,21 +21,21 @@ Page({
 
     var that = this;
 
-    wx.request({
-      url: options.url,
-      //url: 'http://sysutl.com/content/Hello_Mr_Billionaire_3.html',
-      //url: 'https://blog.csdn.net/liuyan19891230/article/details/50969393',
-      method: 'GET',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
+    // wx.request({
+    //   url: options.url,
+    //   //url: 'http://sysutl.com/content/Hello_Mr_Billionaire_3.html',
+    //   //url: 'https://blog.csdn.net/liuyan19891230/article/details/50969393',
+    //   method: 'GET',
+    //   header: {
+    //     'content-type': 'application/x-www-form-urlencoded'
+    //   },
 
-      success: function(res) {
-        console.log(res.data)
-        var article = res.data;
-        WxParse.wxParse('article', 'html', article, that)
-      }
-    })
+    //   success: function(res) {
+    //     console.log(res.data)
+    //     var article = res.data;
+    //     WxParse.wxParse('article', 'html', article, that)
+    //   }
+    // })
 
   },
 

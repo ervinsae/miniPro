@@ -1,8 +1,8 @@
-<!--pages/paper/paper.wxml-->
-<!-- <web-view src="{{html}}"></web-view> -->
+<!-- pages/paper/paper.wxml -->
+<web-view src="{{html}}"></web-view>
 
-<import src="../../wxParse/wxParse.wxml"/>
+<!-- <import src="../../wxParse/wxParse.wxml"/>
 
 <view>
 <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
-</view>
+</view> -->

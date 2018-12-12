@@ -36,7 +36,7 @@ Page({
     this.setData({
       /*name : options.name,
       url : options.url*/
-      id: options.id,
+      id: 20108102208,
     })
 
     this.onQueryData(this.data.id)
@@ -54,9 +54,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    const TxvContext = requirePlugin("tencentVideo");
+    //const TxvContext = requirePlugin("tencentVideo");
 
-    let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
+    //let txvContext = TxvContext.getTxvContext('txv1') // txv1即播放器组件的playerid值
 
 
     //txvContext.play();  // 播放
@@ -116,7 +116,7 @@ Page({
     var that = this;
 
     wx.request({
-      url: app.globalData.baseUrl + 'movie/' + id,
+      url: app.globalData.baseUrl + '/movie/' + id,
 
       method: 'GET',
 
@@ -133,10 +133,10 @@ Page({
         wx.stopPullDownRefresh();
         var data = res.data.retdata;
         that.setData({
-          host: app.globalData.baseUrl,
+          host: app.globalData.baseUrl + "/",
 
           title: data.name,
-          imageurl: app.globalData.baseUrl + data.movie_image,
+          imageurl: app.globalData.baseUrl + "/" + data.movie_image,
           //不能使用IP地址
           //imageurl: "../../images/bg.jpg",
 
